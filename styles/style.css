@@ -1,0 +1,128 @@
+body {
+    background-color: #d8d7d7;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(75, 74, 74);
+}
+
+h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 3vw;
+}
+
+.greeting {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: black;
+}
+
+.greeting-input {
+    border: none;
+    background-color: #d8d7d7;
+    font-size: 20px;
+    font-weight: 700;
+    width: 170px;
+}
+
+.greeting-input value {
+    font-size: 20px;
+}
+
+.greeting-input:focus {
+    outline: none;
+}
+
+.todo-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-input {
+    width: 315px;
+    font-size: 20px;
+}
+
+.radio-block {
+    margin: 45px 0;
+}
+
+.radio {
+    padding: 35px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.bottom-text {
+    margin: 20px 0;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.btn {
+    height: 40px;
+    margin-top: 10px;
+    background-color: #1c5ce6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+/*Изменение цвета радио кнопки*/
+input[type='radio'] {
+    visibility: hidden;
+}
+
+input[type='radio']:after {
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    top: -1px;
+    left: -2px;
+    position: relative;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+
+}
+
+input[type='radio']:checked:after {
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    top: -1px;
+    left: -2px;
+    position: relative;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+
+}
+
+#business:after {
+    border: 1px solid #0d11f7;
+}
+
+#business:checked:after {
+    background-color: #0d11f7;
+    border: 1px solid #0d11f7;
+}
+
+#personal:after {
+    border: 1px solid #ee32de;
+}
+
+#personal:checked:after {
+    background-color: #ee32de;
+    border: 1px solid #ee32de;
+}
+
+/*Изменение цвета радио кнопки - конец*/

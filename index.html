@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="greeting">
+                <p>What's up, </p>
+                <form action="">
+                    <input class="greeting-input" type="text" value="" placeholder="enter your name">
+                </form>
+            </div>
+            <form class="todo-form" action="">
+                <h2>Create A TODO</h2>
+                <div>
+                    <p>What's on your todo list?</p>
+                    <label for="todo">
+                        <input class="todo-input" type="text" id="todo" placeholder="new todo">
+                    </label>
+                </div>
+                <div>
+                    <p>Pick a category</p>
+                    <div class="radio-block">
+                        <label class="radio" for="business"><input type="radio" id="business" value="business"
+                                name="business-personal">Business</label>
+                        <label class="radio" for="personal"><input type="radio" id="personal" value="personal"
+                                name="business-personal">Personal</label>
+                    </div>
+                </div>
+                <button class="btn">Add todo</button>
+
+                <div class="bottom-text">todo list</div>
+            </form>
+
+        </div>
+    </main>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
