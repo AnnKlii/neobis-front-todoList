@@ -9,38 +9,41 @@
 </head>
 
 <body>
-    <main>
+    <div class="wrapper">
         <div class="container">
             <div class="greeting">
                 <p>What's up, </p>
                 <form action="">
-                    <input class="greeting-input" type="text" value="" placeholder="enter your name">
+                    <label for="greeting">
+                        <input class="greeting-input" type="text" value="" id="greeting"
+                            placeholder="enter your name"></label>
                 </form>
             </div>
+            <h2>Create A TODO</h2>
             <form class="todo-form" action="">
-                <h2>Create A TODO</h2>
                 <div>
                     <p>What's on your todo list?</p>
-                    <label for="todo">
-                        <input class="todo-input" type="text" id="todo" placeholder="new todo">
+                    <label class="todo-label" for="input">
+                        <input class="todo-input" type="text" id="input" placeholder="new todo" name="todo">
                     </label>
                 </div>
                 <div>
                     <p>Pick a category</p>
                     <div class="radio-block">
-                        <label class="radio" for="business"><input type="radio" id="business" value="business"
-                                name="business-personal">Business</label>
-                        <label class="radio" for="personal"><input type="radio" id="personal" value="personal"
-                                name="business-personal">Personal</label>
+                        <label class="radio business" for="business"><input class="business-radio input-radio"
+                                type="radio" id="business" value="business" name="business-personal">Business</label>
+                        <label class="radio personal" for="personal"><input class="personal-radio input-radio"
+                                type="radio" id="personal" value="personal" name="business-personal">Personal</label>
                     </div>
                 </div>
-                <button class="btn">Add todo</button>
-
-                <div class="bottom-text">todo list</div>
+                <button class="btn" id="btn" type="submit">Add todo</button>
             </form>
+            <div class="bottom-text">todo list</div>
+            <ul class="task-list">
 
+            </ul>
         </div>
-    </main>
+    </div>
     <script src="./scripts/script.js"></script>
 </body>
 
