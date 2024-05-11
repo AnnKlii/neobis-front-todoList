@@ -90,7 +90,8 @@ h2 {
 }
 
 /*Изменение цвета радио кнопки*/
-input[type='radio'] {
+input[type='radio'],
+input[type='checkbox'] {
     visibility: hidden;
 }
 
@@ -166,7 +167,7 @@ ul {
 }
 
 .task-done {
-    color: rgb(77, 76, 76);
+    color: rgb(148, 147, 147);
     text-decoration: line-through;
 }
 

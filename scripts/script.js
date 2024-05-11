@@ -2,37 +2,73 @@ const button = document.querySelector('#btn');
 const input = document.querySelector('#input');
 const taskList = document.querySelector('.task-list');
 
+// const btnDelete = document.createElement('button')
+// const btnEdit = document.createElement('button')
+// const item = document.createElement('li')
+// const par = document.createElement('p')
+
 
 button.addEventListener('click', (evt) => {
     evt.preventDefault();
     if (input.value == '') { alert("Пожалуйста, введите текст") }
-
-    createElements(input.value)
+    else {
+        createElements(input.value)
+    }
+    cleanInput()
 })
+function cleanInput() {
+    input.value = '';
+    // const radioInputs = document.querySelectorAll('[type=radio]')
+    // for (const i of radioInputs) {
+    //     if (i.hasAttribute('value')) { console.log(i) }
+    // }
+}
 
-function createElements(event) {
-    const item = document.createElement('li')
-    const par = document.createElement('p')
-    item.className = "item"
-    par.className = "task-item"
-    par.textContent = input.value
+function createElements() {
+    const task = document.createElement('div');
+    task.innerHTML = `
+    <li class="item">
+    <label>
+    <input type="checkbox"><span class="circle ${businessOrPersonal()}" ></span>
+    </label>
+    <p class="task-item">${input.value}</p>
+    <button class="button-edit">Edit</button>
+    <button class="button-delete">Delete</button>
+    </li>
+    `
+    taskList.appendChild(task)
 
-    const btnEdit = document.createElement('button')
-    btnEdit.className = "button-edit"
-    btnEdit.innerHTML = "Edit"
+    taskDelete()
+    // taskEdit()
+    taskDone()
+}
 
-    const btnDelete = document.createElement('button')
-    btnDelete.className = "button-delete"
-    btnDelete.innerHTML = "Delete"
+function businessOrPersonal() {
+    if (document.querySelector('[type=radio]').checked) {
+        return 'business'
+    } else { return 'personal' }
+}
 
-    btnDelete.addEventListener('click', evt => {
-        taskList.removeChild(item)
-    })
+function taskDelete() {
+    const btnDelete = document.querySelectorAll('.button-delete');
+    const item = document.querySelectorAll('.item');
+    for (let i = 0; i < btnDelete.length; i++) {
+        btnDelete[i].addEventListener('click', evt => {
+            item[i].remove()
+        })
+    }
+}
 
-    taskList.appendChild(item)
-    item.appendChild(par)
-    item.appendChild(btnEdit)
-    item.appendChild(btnDelete)
+function taskDone() {
+    const radioBtn = document.querySelectorAll('.item input[type="checkbox"]');
+    const taskAll = document.querySelectorAll('.task-item');
 
-    input.value = ''
+    for (let i = 0; i < radioBtn.length; i++) {
+        radioBtn[i].addEventListener('click', () => {
+            if (radioBtn[i].checked) {
+                taskAll[i].classList.toggle('task-done')
+            }
+        }
+        )
+    }
 }
