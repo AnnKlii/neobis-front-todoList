@@ -2,12 +2,6 @@ const button = document.querySelector('#btn');
 const input = document.querySelector('#input');
 const taskList = document.querySelector('.task-list');
 
-// const btnDelete = document.createElement('button')
-// const btnEdit = document.createElement('button')
-// const item = document.createElement('li')
-// const par = document.createElement('p')
-
-
 button.addEventListener('click', (evt) => {
     evt.preventDefault();
     if (input.value == '') { alert("Пожалуйста, введите текст") }
@@ -16,13 +10,6 @@ button.addEventListener('click', (evt) => {
     }
     cleanInput()
 })
-function cleanInput() {
-    input.value = '';
-    // const radioInputs = document.querySelectorAll('[type=radio]')
-    // for (const i of radioInputs) {
-    //     if (i.hasAttribute('value')) { console.log(i) }
-    // }
-}
 
 function createElements() {
     const task = document.createElement('div');
@@ -41,6 +28,13 @@ function createElements() {
     taskDelete()
     // taskEdit()
     taskDone()
+}
+function cleanInput() {
+    input.value = '';
+    const radioCheck = document.querySelectorAll('[type="radio"]');
+    for (const i of radioCheck) {
+        i.checked = false;
+    }
 }
 
 function businessOrPersonal() {
@@ -66,8 +60,8 @@ function taskDone() {
     for (let i = 0; i < radioBtn.length; i++) {
         radioBtn[i].addEventListener('click', () => {
             if (radioBtn[i].checked) {
-                taskAll[i].classList.toggle('task-done')
-            }
+                taskAll[i].classList.add('task-done')
+            } else { taskAll[i].classList.remove('task-done') }
         }
         )
     }
