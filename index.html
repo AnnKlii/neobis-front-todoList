@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>ToDo</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="greeting">
+                <p>What's up, </p>
+                <form action="">
+                    <label for="greeting">
+                        <input class="greeting-input" type="text" value="" id="greeting"
+                            placeholder="enter your name"></label>
+                </form>
+            </div>
+            <h2>Create A TODO</h2>
+            <form class="todo-form" action="">
+                <div>
+                    <p>What's on your todo list?</p>
+                    <label class="todo-label" for="input">
+                        <input class="todo-input" type="text" id="input" placeholder="e.g. get a milk" name="todo">
+                    </label>
+                </div>
+                <div>
+                    <p>Pick a category</p>
+                    <div class="radio-block">
+                        <label class="radio" for="business">
+                            <input class="business-radio" type="radio" id="business" value="business"
+                                name="business-personal">
+                            <span class="circle business"></span>
+                            <div>Business</div>
+                        </label>
+                        <label class="radio" for="personal"><input class="personal-radio" type="radio" id="personal"
+                                value="personal" name="business-personal">
+                            <span class="circle personal"></span>
+                            <div>Personal</div>
+
+                        </label>
+                    </div>
+                </div>
+                <button class="btn" id="btn" type="submit">Add todo</button>
+            </form>
+            <div class="bottom-text">todo list</div>
+            <ul class="task-list">
+
+            </ul>
+        </div>
+    </div>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
